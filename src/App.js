@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+
+import "./index.css"
+import Navbar from "./components/Navbar";
+import Mainsection from "./components/Mainsection";
+import Transaction from "./components/Transaction";
+import Listgroup from "./components/Listgroup"
+import { GlobalProvider } from "./context/Globalcontext";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <div>
+        <div className="container">
+          <Navbar />
+          <Mainsection />
+          <Transaction />
+          <p id="recent-tr">Recent transaction</p>
+          <Listgroup />
+        </div>
+      </div>
+    </GlobalProvider>
   );
 }
 
-export default App;
+export default App
